@@ -25,5 +25,15 @@ def joke():
   joke = json.loads(response)['value']['joke']
   return joke 
 
+@app.route('/')
+@app.route('/info')
+def get_info():
+  info = {['name': 'Chuck Norris Joke Service']}
+  body = json.dumps(info, indent=2)
+  return (body, 200, {
+    'Content-length': len(body),
+    'Content-type': 'application/json'
+  })
+
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port=5000)
