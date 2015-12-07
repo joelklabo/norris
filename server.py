@@ -28,8 +28,8 @@ def joke():
 @app.route('/')
 @app.route('/info')
 def get_info():
-  info = {['name': 'Chuck Norris Joke Service']}
-  body = json.dumps(info, indent=2)
+  info = {"name": "Chuck Norris Joke Service"}
+  body = json.dumps(info)
   return (body, 200, {
     'Content-length': len(body),
     'Content-type': 'application/json'
